@@ -1,2 +1,3 @@
-ip r d default
-ip a a default via ${GATEWAY:-192.168.1.1}
+external_nic=$(ip -4 -o a | grep -v ': lo' | cut -f2 -d' ')
+
+source /iptabls.sh
