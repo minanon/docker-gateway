@@ -1,3 +1,5 @@
-external_nic=$(ip -4 -o a | grep -v ': lo' | cut -f2 -d' ')
+#!/bin/sh
 
-source /iptabls.sh
+/iptables-nat.sh
+
+exec tail -f /etc/hosts
